@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".FavoritosActivity">
 
     <TextView
         android:id="@+id/txt_fav"
@@ -38,4 +39,5 @@
         android:layout_height="600dp"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="63dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
