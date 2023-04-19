@@ -85,6 +85,7 @@
         android:layout_width="95dp"
         android:layout_height="41dp"
         android:background="#E63E3E"
+        android:onClick="clickABusqueda3"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fav"

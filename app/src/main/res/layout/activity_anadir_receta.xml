@@ -62,6 +62,7 @@
         android:layout_width="413dp"
         android:layout_height="49dp"
         android:background="#D3412E"
+        android:onClick="clickABusqueda2"
         android:text="Atras"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

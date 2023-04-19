@@ -27,20 +27,29 @@ public class MainActivity extends AppCompatActivity {
         txt_contraseña = findViewById(R.id.txt_contraseña);
     }
 
-/*    public void clickIniciarSesion(View view) {
+public void clickIniciarSesion(View view) {
         String PASS = "1234";
         String User = "def";
 
-        String passUser = txt_usuario.getText().toString();
-        String useruser = txt_contraseña.getText().toString();
+        String useruser = txt_usuario.getText().toString();
+        String passUser = txt_contraseña.getText().toString();
+
+    Toast.makeText(this, passUser, Toast.LENGTH_SHORT).show();
+    Toast.makeText(this, useruser, Toast.LENGTH_SHORT).show();
 
         if (PASS.equals(passUser) && User.equals(useruser)) {
-            Intent miIntent = new Intent(this, busqueda_act.class);
-            startActivity(busqueda_act.class);
+            Intent miIntent = new Intent(this, BusquedaActivity.class);
+            startActivity(miIntent);
             finish();
         } else {
             Toast.makeText(this, "No estas en el registro", Toast.LENGTH_SHORT).show();
         }
-    }*/
+    }
+public void clickCrearSesion(View view) {
+
+            Intent miIntent2 = new Intent(this, CrearCuentaActivity.class);
+            startActivity(miIntent2);
+            finish();
+    }
 }
 
