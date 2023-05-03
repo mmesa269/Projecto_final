@@ -21,17 +21,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/new_rece_nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Por favor ingresar el nombre de tu receta"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_add_receta"
-        app:layout_constraintVertical_bias="0.0" />
-
     <Button
         android:id="@+id/new_rece_imagen_btn"
         android:layout_width="407dp"
@@ -40,9 +29,10 @@
         android:text="Selecionar imagen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_rece_nombre"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="@+id/txt_add_receta"
+        app:layout_constraintVertical_bias="0.157" />
 
     <Button
         android:id="@+id/new_rece_guardar_btn2"
@@ -52,15 +42,14 @@
         android:text="Guardar receta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_rece_nombre"
-        app:layout_constraintVertical_bias="0.919" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/new_rece_atras_btn"
         android:layout_width="413dp"
         android:layout_height="49dp"
+        android:layout_marginBottom="40dp"
         android:background="#D3412E"
         android:onClick="clickABusqueda2"
         android:text="Atras"
@@ -68,8 +57,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_rece_nombre"
-        app:layout_constraintVertical_bias="0.998" />
+        app:layout_constraintTop_toBottomOf="@+id/new_rece_pasos"
+        app:layout_constraintVertical_bias="0.934" />
 
     <ImageView
         android:id="@+id/preview_imagen"
@@ -93,43 +82,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_rece_imagen_btn" />
 
-    <TextView
+    <EditText
         android:id="@+id/new_rece_ingredientes"
-        android:layout_width="413dp"
-        android:layout_height="55dp"
+        android:layout_width="407dp"
+        android:layout_height="81dp"
+        android:ems="10"
         android:hint="Ingresa los ingedientes de tu receta seguidos de coma (Ej: Tomate, Cebolla)"
-        android:textColor="#000000"
-        android:textSize="20sp"
+        android:inputType="textLongMessage|textMultiLine|textPersonName"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/preview_imagen"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.454" />
 
-    <TextView
-        android:id="@+id/new_rece_keyword"
-        android:layout_width="413dp"
-        android:layout_height="85dp"
-        android:hint="Añadir keywords de tu receta seguidas de comas (Ej: Vegano, parrilla, etc)"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/new_rece_guardar_btn2"
+    <EditText
+        android:id="@+id/new_rece_nombre"
+        android:layout_width="407dp"
+        android:layout_height="45dp"
+        android:ems="10"
+        android:hint="Por favor ingresar el nombre de tu receta"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_rece_ingredientes"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintTop_toTopOf="@+id/txt_add_receta"
+        app:layout_constraintVertical_bias="0.065" />
 
-    <TextView
-        android:id="@+id/new_rece_pasos"
-        android:layout_width="413dp"
-        android:layout_height="85dp"
-        android:hint="Añadri como preparar tu receta"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/new_rece_guardar_btn2"
+    <EditText
+        android:id="@+id/new_rece_keyword"
+        android:layout_width="411dp"
+        android:layout_height="68dp"
+        android:ems="10"
+        android:hint="Añadir keywords de tu receta seguidas de comas (Ej: Vegano, parrilla, etc)"
+        android:inputType="textPersonName"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/new_rece_atras_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/new_rece_keyword"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.645" />
+
+    <EditText
+        android:id="@+id/new_rece_pasos"
+        android:layout_width="409dp"
+        android:layout_height="88dp"
+        android:ems="10"
+        android:hint="Añadir como preparar tu receta"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.79" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

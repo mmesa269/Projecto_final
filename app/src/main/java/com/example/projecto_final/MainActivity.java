@@ -3,7 +3,6 @@ package com.example.projecto_final;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -23,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void referenciar() {
 
-        txt_usuario = findViewById(R.id.txt_usuario);
-        txt_contraseña = findViewById(R.id.txt_contraseña);
+        txt_usuario = findViewById(R.id.txt_usuario2);
+        txt_contraseña = findViewById(R.id.txt_contraseña2);
     }
 
 public void clickIniciarSesion(View view) {
