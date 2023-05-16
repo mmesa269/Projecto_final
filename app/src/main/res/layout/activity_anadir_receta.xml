@@ -39,11 +39,14 @@
         android:layout_width="412dp"
         android:layout_height="43dp"
         android:background="#4CAF50"
+        android:onClick="crearreceta"
         android:text="Guardar receta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/new_rece_atras_btn"
+        app:layout_constraintVertical_bias="0.924" />
 
     <Button
         android:id="@+id/new_rece_atras_btn"
@@ -58,7 +61,7 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/new_rece_pasos"
-        app:layout_constraintVertical_bias="0.934" />
+        app:layout_constraintVertical_bias="0.565" />
 
     <ImageView
         android:id="@+id/preview_imagen"
@@ -89,6 +92,7 @@
         android:ems="10"
         android:hint="Ingresa los ingedientes de tu receta seguidos de coma (Ej: Tomate, Cebolla)"
         android:inputType="textLongMessage|textMultiLine|textPersonName"
+        android:onClick="crearreceta"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
