@@ -33,9 +33,6 @@ public void clickIniciarSesion(View view) {
         String useruser = txt_usuario.getText().toString();
         String passUser = txt_contraseña.getText().toString();
 
-    Toast.makeText(this, passUser, Toast.LENGTH_SHORT).show();
-    Toast.makeText(this, useruser, Toast.LENGTH_SHORT).show();
-
         if (PASS.equals(passUser) && User.equals(useruser)) {
             Intent miIntent = new Intent(this, BusquedaActivity.class);
             startActivity(miIntent);
