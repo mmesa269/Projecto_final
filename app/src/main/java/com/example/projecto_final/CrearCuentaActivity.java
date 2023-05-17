@@ -2,6 +2,9 @@ package com.example.projecto_final;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
