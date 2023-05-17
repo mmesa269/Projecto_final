@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "900024211946",
+    "project_id": "micocina-20d92",
+    "storage_bucket": "micocina-20d92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900024211946:android:66d6ce94c64e49b3783a93",
+        "android_client_info": {
+          "package_name": "com.example.projecto_final"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900024211946-7s29vjinvt9hlfej2njuqb3tf86od2ac.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvCueq9s0Lv-kwEvcB8j0HeaavIpjK4L4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900024211946-7s29vjinvt9hlfej2njuqb3tf86od2ac.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
