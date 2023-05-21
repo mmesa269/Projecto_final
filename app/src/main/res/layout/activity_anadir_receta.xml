@@ -116,21 +116,6 @@
         app:layout_constraintVertical_bias="0.065" />
 
     <EditText
-        android:id="@+id/new_rece_keyword"
-        android:layout_width="411dp"
-        android:layout_height="68dp"
-        android:ems="10"
-        android:hint="Añadir keyword de tu receta (Ej: Vegano / Parrilla / etc)"
-        android:inputType="textPersonName"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/new_rece_atras_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.645" />
-
-    <EditText
         android:id="@+id/new_rece_pasos"
         android:layout_width="409dp"
         android:layout_height="88dp"
@@ -142,5 +127,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.79" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/new_rece_pasos"
+        app:layout_constraintTop_toBottomOf="@+id/new_rece_ingredientes"
+        app:layout_constraintVertical_bias="0.722"
+        tools:layout_editor_absoluteX="3dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="375dp"
+        android:layout_height="45dp"
+        android:text="Secciona el metodo de cocción o lo que es tu receta"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/spinner2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/new_rece_ingredientes"
+        app:layout_constraintVertical_bias="0.297" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,6 @@ public class CrearCuentaActivity extends AppCompatActivity {
 
     private TextView txt_usuario;
     private TextView txt_contrasena;
-
     private TextView txt_confirmar_contrasena;
 
     private String nuevo_usuario;

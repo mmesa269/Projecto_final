@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import java.util.ArrayList;
+
 public class BusquedaActivity extends AppCompatActivity {
 
     private String Codigo_coccion, Nombre_coccion, Nombre_ingrediente, Codigo_Pasos, Descripcion_receta, Codigo_receta, Nombre_receta, favorito, fuente_receta, url_imagen_receta;
@@ -20,10 +22,12 @@ public class BusquedaActivity extends AppCompatActivity {
         this.Nombre_ingrediente = Nombre_ingrediente;
         this.Codigo_ingrediente_principal = Codigo_ingrediente_principal;
     }
+    public void MainActivity_Pasos(){}
     public void MainActivity_Pasos(String Codigo_Pasos, String Descripcion_receta) {
         this.Codigo_Pasos = Codigo_Pasos;
         this.Descripcion_receta = Descripcion_receta;
     }
+    public void MainActivity_Receta(){}
     public void MainActivity_Receta(String Codigo_Pasos, String Codigo_coccion, Integer Codigo_ingrediente_principal, String Codigo_receta, String Nombre_receta, String favorito, String fuente_receta, String url_imagen_receta) {
         this.Codigo_Pasos = Codigo_Pasos;
         this.Codigo_coccion = Codigo_coccion;
@@ -34,7 +38,6 @@ public class BusquedaActivity extends AppCompatActivity {
         this.fuente_receta = fuente_receta;
         this.url_imagen_receta = url_imagen_receta;
     }
-
 
     public String getCodigo_coccion() {return Codigo_coccion;}
     public void setCodigo_coccion(String Codigo_coccion) {this.Codigo_coccion = "PR" + Nombre_coccion.substring(1, 3);}
@@ -58,6 +61,8 @@ public class BusquedaActivity extends AppCompatActivity {
     public void setfuente_receta(String fuente_receta) {this.favorito = fuente_receta;}
     public String geturl_imagen_receta() {return url_imagen_receta;}
     public void seturl_imagen_receta(String url_imagen_receta) {this.url_imagen_receta = url_imagen_receta;}
+
+    private ArrayList<BusquedaActivity> ListaCoccion = new ArrayList<>();
 
 
 
