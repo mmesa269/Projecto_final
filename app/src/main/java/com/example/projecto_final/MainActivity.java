@@ -1,49 +1,80 @@
 package com.example.projecto_final;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText txt_usuario, txt_contraseña;
-    private Button bt_log, crear_cuanta;
+    private ArrayList<MainActivity> ListaUsuarios = new ArrayList<>();
+    private String nombre_usuario, contrasena_usuario, codigo_usuario;
+    private EditText txt_usuario, txt_contrasena;
 
-    private String databaseUrl = "https://apex.oracle.com/pls/apex/personalmm269/UsuarioMicocina/Usuarios/";
-    private String User = "nombre_usuario";
-    private String PASS = "contrasena_usuario";
+    public MainActivity(){}
+    public MainActivity(String nombre_usuario, String contrasena_usuario, String codigo_usuario) {
+        this.nombre_usuario = nombre_usuario;
+        this.contrasena_usuario = contrasena_usuario;
+        this.codigo_usuario = nombre_usuario.substring(1, 5);
+    }
+    public String getnombre_usuario() {return nombre_usuario;}
+    public void setnombre_usuario(String nombre_usuario) {this.nombre_usuario = nombre_usuario;}
+    public String getcontrasena_usuario() {return contrasena_usuario;}
+    public void setcontrasena_usuario(String precio) {this.contrasena_usuario = contrasena_usuario;}
+    public String getcodigo_usuario() {return codigo_usuario;}
+    public void setcodigo_usuario(String codigo_usuario) {this.codigo_usuario = nombre_usuario.substring(1, 5);}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cargarDatos();
         referenciar();
     }
 
     private void referenciar() {
 
         txt_usuario = findViewById(R.id.txt_usuario2);
-        txt_contraseña = findViewById(R.id.txt_contraseña2);
+        txt_contrasena = findViewById(R.id.txt_contraseña2);
+    }
+
+    public void cargarDatos(){
+        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        firestore.collection("Usuario").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()){
+
+                    for (DocumentSnapshot document : task.getResult()){
+
+                        MainActivity UserLog = document.toObject(MainActivity.class);
+                        ListaUsuarios.add(UserLog);
+                    }
+                }else{
+                }
+            }
+        });
     }
     public void clickIniciarSesion(View view) {
+
         String PASS = "1234";
         String User = "def";
 
         String useruser = txt_usuario.getText().toString();
-        String passUser = txt_contraseña.getText().toString();
+        String passUser = txt_contrasena.getText().toString();
 
         if (PASS.equals(passUser) && User.equals(useruser)) {
             Intent miIntent = new Intent(this, BusquedaActivity.class);
