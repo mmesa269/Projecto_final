@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<MainActivity> ListaUsuarios = new ArrayList<>();
     private String nombre_usuario, contrasena_usuario, codigo_usuario;
     private EditText txt_usuario, txt_contrasena;
+    private FirebaseAuth mAuth;
+
 
     public MainActivity(){}
     public MainActivity(String nombre_usuario, String contrasena_usuario, String codigo_usuario) {
@@ -40,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mAuth = FirebaseAuth.getInstance();
 
         cargarDatos();
         referenciar();
@@ -50,6 +55,14 @@ public class MainActivity extends AppCompatActivity {
         txt_usuario = findViewById(R.id.txt_usuario2);
         txt_contrasena = findViewById(R.id.txt_contraseña2);
     }
+    public void onStart() {
+        super.onStart();
+        FirebaseUser Usuario = mAuth.getCurrentUser();
+        if(Usuario != null){
+            Usuario.reload();
+        }
+    }
+
 
     public void cargarDatos(){
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
@@ -68,6 +81,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    FirebaseUser Usuario = FirebaseAuth.getInstance().getCurrentUser();
+    // if (Usuario != null) {
+        // Name, email address, and profile photo Url
+        // String User = Usuario.nombre_usuario();
+        // String PASS = Usuario.contrasena_usuario();
+    // }
+
     public void clickIniciarSesion(View view) {
 
         String PASS = "1234";
