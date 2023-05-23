@@ -63,14 +63,16 @@ public class AnadirRecetaActivity extends AppCompatActivity {
         crear_rece_nombre = new_rece_nombre.getText().toString();
         BusquedaActivity nueva_receta = new BusquedaActivity();
         nueva_receta.setCodigo_ingrediente_principal(13);
-        nueva_receta.setCodigo_Pasos(new_rece_pasos);
+        nueva_receta.setCodigo_Pasos(crear_rece_pasos);
         nueva_receta.setCodigo_coccion("PSA01");
-        nueva_receta.setNombre_receta(new_rece_nombre);
-        nueva_receta.setCodigo_receta(new_rece_nombre.substring(1, 4));
+        nueva_receta.setNombre_receta(crear_rece_nombre);
+        nueva_receta.setCodigo_receta(crear_rece_nombre.substring(1, 4));
         nueva_receta.setCodigo_receta("Original");
+        nueva_receta.setfavorito("No");
         nueva_receta.seturl_imagen_receta("N/A");
         FirebaseFirestore firestore = FirebaseFirestore.getInstance();
         firestore.collection("Receta").add(nueva_receta);
+
 
         Intent miIntent7 = new Intent(this, BusquedaActivity.class);
         startActivity(miIntent7);

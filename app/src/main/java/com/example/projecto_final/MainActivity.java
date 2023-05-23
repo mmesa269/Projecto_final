@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mAuth = FirebaseAuth.getInstance();
 
-        cargarDatos();
+        //cargarDatos();
         referenciar();
     }
 
@@ -64,30 +64,28 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void cargarDatos(){
-        FirebaseFirestore firestore = FirebaseFirestore.getInstance();
-        firestore.collection("Usuario").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()){
-
-                    for (DocumentSnapshot document : task.getResult()){
-
-                        MainActivity UserLog = document.toObject(MainActivity.class);
-                        ListaUsuarios.add(UserLog);
-                    }
-                }else{
-                }
-            }
-        });
-    }
+    //public void cargarDatos(){
+    //FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    //firestore.collection("Usuario") (new OnCompleteListener<QuerySnapshot>() {
+    //@Override
+    //public void onComplete(@NonNull Task<QuerySnapshot> task) {
+    //if (task.isSuccessful()){
+        //for (DocumentSnapshot document : task.getResult()){
+                        //MainActivity UserLog = document.toObject(MainActivity.class);
+                        //ListaUsuarios.add(UserLog);
+                        //}
+        //}else{
+        //}
+    //}
+    //});
+                //}
 
     FirebaseUser Usuario = FirebaseAuth.getInstance().getCurrentUser();
-    // if (Usuario != null) {
-        // Name, email address, and profile photo Url
-        // String User = Usuario.nombre_usuario();
-        // String PASS = Usuario.contrasena_usuario();
-    // }
+    //if (Usuario != null) {
+        //nombre_usuario, contrasena_usuario
+        //String User = Usuario.nombre_usuario();
+        //String PASS = Usuario.contrasena_usuario();
+    //}
 
     public void clickIniciarSesion(View view) {
 

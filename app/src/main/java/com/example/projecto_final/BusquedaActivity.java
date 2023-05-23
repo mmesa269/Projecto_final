@@ -6,6 +6,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 
 public class BusquedaActivity extends AppCompatActivity {
@@ -63,6 +67,9 @@ public class BusquedaActivity extends AppCompatActivity {
     public void seturl_imagen_receta(String url_imagen_receta) {this.url_imagen_receta = url_imagen_receta;}
 
     private ArrayList<BusquedaActivity> ListaCoccion = new ArrayList<>();
+    private ArrayList<BusquedaActivity> ListaIngrediente = new ArrayList<>();
+    private ArrayList<BusquedaActivity> ListaPasos = new ArrayList<>();
+    private ArrayList<BusquedaActivity> ListaReceta = new ArrayList<>();
 
 
 
@@ -83,4 +90,48 @@ public class BusquedaActivity extends AppCompatActivity {
         startActivity(miIntent4);
         finish();
     }
-}
+
+    //public void cargarDatos_Coccion() {
+    //FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    //firestore.collection("Coccion").(new OnCompleteListener<QuerySnapshot>();
+    //MainActivity_Coccion Cocciones = new MainActivity_Coccion();
+    //Cocciones.setCodigo_coccion(firestore.Coccion.Codigo_coccion);
+    //Cocciones.setNombre_coccion(firestore.Coccion.Nombre_coccion);
+    //}
+    //public void cargarDatos_Pasos() {
+    //FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+    //firestore.collection("Pasos").(new OnCompleteListener<QuerySnapshot>();
+    //MainActivity_Pasos Pasos = new MainActivity_Coccion();
+    // Pasos.setCodigo_Pasos(firestore.Pasos.Codigo_Pasos);
+    // Pasos.setDescripcion_receta(firestore.Pasos.Descripcion_receta);
+    //}
+    //public void cargarDatos_Ingrediente() {
+        //  FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        //  firestore.collection("Ingrediente").(new OnCompleteListener<QuerySnapshot>();
+        //  MainActivity_Pasos Ingredientes = new MainActivity_Coccion();
+        //  Ingredientes.setNombre_ingrediente(firestore.Ingredientes.Nombre_ingrediente);
+        //  Ingredientes.setCodigo_ingrediente_principal(firestore.Ingredientes.Codigo_ingrediente_principal);
+        // }
+    //public void cargarDatos_Ingrediente() {
+        //    FirebaseFirestore firestore = FirebaseFirestore.getInstance();
+        //    firestore.collection("Receta").(new OnCompleteListener<QuerySnapshot>();
+        //    MainActivity_Pasos Recetas = new MainActivity_Coccion();
+        //    Recetas.setCodigo_Pasos(firestore.Receta.Codigo_Pasos);
+        //    Recetas.setCodigo_coccion(firestore.Receta.Codigo_coccion);
+        //    Recetas.setCodigo_ingrediente_principal(firestore.Receta.Codigo_ingrediente_principal);
+        //    Recetas.setCodigo_receta (firestore.Receta.Codigo_receta);
+        //    Recetas.setCodigo_receta(firestore.Receta.Codigo_receta);
+        //   Recetas.setNombre_receta(firestore.Receta.Nombre_receta);
+        //    Recetas.setfavorito(firestore.Receta.favorito);
+        //    Recetas.setfuente_receta(firestore.Receta.fuente_receta);
+        //    Recetas.seturl_imagen_receta(firestore.Receta.url_imagen_receta);
+        //}
+    //ListaCoccion = new ArrayList<>();
+    //ListaCoccion.add(Cocciones);
+    //ListaPasos = new ArrayList<>();
+    //ListaPasos.add(Pasos);
+    ////ListaIngrediente = new ArrayList<>();
+    //ListaIngrediente.add(Ingredientes);
+    //ListaReceta = new ArrayList<>();
+    //ListaReceta.add(Recetas);
+    }
